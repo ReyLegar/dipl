@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список заявок на кредиты</title>
+</head>
+<body>
+    <h1>Список заявок на кредиты</h1>
+    <ul>
+        {% for credit_application in credit_applications %}
+            <li>{{ credit_application.user }} - {{ credit_application.amount }}</li>
+        {% empty %}
+            <li>Нет заявок на кредиты</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'admin_home' %}">Вернуться на главную</a>
+</body>
+</html>
